@@ -1,0 +1,34 @@
+{% extends 'back_base.html.twig' %}
+{% block title %}Tente{% endblock %}
+
+{% block body %}
+    <a href="{{ path('app_tente_index') }}">Retour</a>
+
+    <h1>Tente</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ tente.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ tente.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ tente.description }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ tente.prix }}</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <!--<a href="{{ path('app_tente_edit', {'id': tente.id}) }}">edit</a>-->
+
+    {{ include('tente/_delete_form.html.twig') }}
+{% endblock %}

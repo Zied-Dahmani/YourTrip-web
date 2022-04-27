@@ -1,0 +1,48 @@
+{% extends 'front_base.html.twig' %}
+{% block title %}Centre De Camping{% endblock %}
+
+
+{% block body %}
+    <!--<section id="about" class="about-sec section-wrapper description txt-color" >
+        <div class="container">
+            <div class="row">-->
+                <!-- Section Header -->
+               <!-- <div class="col-md-12 col-sm-12 col-xs-12 section-header wow fadeInDown">-->
+
+            <!--<a href="{{ path('app_centre_camping_index2') }}">Retour</a>-->
+
+    <img src="https://api.qrserver.com/v1/create-qr-code/?data={{centre_camping.nom}},{{ centre_camping.adresse}}&amp;size=70x70" alt="" title=""/>
+
+    <h1 style="color: darkorange">Centre De Camping</h1>
+
+    <table class="table">
+        <tbody>
+
+        <tr>
+                <th style="color: white">Nom</th>
+                <td style="color: white">{{ centre_camping.nom }}</td>
+            </tr>
+            <tr>
+                <th style="color: white">Description</th>
+                <td style="color: white">{{ centre_camping.description }}</td>
+            </tr>
+            <tr>
+                <th style="color: white">Adresse</th>
+                <td style="color: white"> {{ centre_camping.adresse }}</td>
+            </tr>
+            <tr>
+                <th style="color: white">Email</th>
+                <td style="color: white"> {{ centre_camping.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a style="color: darkorange" href="{{ path('app_tente_index2',{'id':centre_camping.id})}}">Tentes</a>
+
+
+    <!--</div>-->
+        <!--    </div>
+        </div>
+    </section>-->
+
+{% endblock %}

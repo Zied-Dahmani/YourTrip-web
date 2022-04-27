@@ -1,0 +1,42 @@
+
+
+{% block body %}
+    <h1>Tentes</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Nom Centre De Camping</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for tente in tentes %}
+            <tr>
+                <td>{{ tente.id }}</td>
+                <td>{{ tente.nom }}</td>
+                <td>{{ tente.description }}</td>
+                <td>{{ tente.prix }}</td>
+                <td>{{ tente.centreCamping.nom }}</td>
+
+{#                <td>#}
+{#                    <a href="{{ path('app_tente_edit', {'id': tente.id}) }}">Modifier</a>#}
+{#                    <a href="{{ path('app_tente_delete', {'id': tente.id}) }}">Supprimer</a>#}
+
+{#                </td>#}
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{#    <a href="{{ path('app_tente_new') }}">Ajouter</a>#}
+
+{% endblock %}

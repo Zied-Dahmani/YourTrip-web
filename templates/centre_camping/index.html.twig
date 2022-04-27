@@ -1,0 +1,50 @@
+{% extends 'back_base.html.twig' %}
+
+{% block title %}Centres De Camping{% endblock %}
+
+
+{% block body %}
+    <h1>Centres De Camping</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Adresse</th>
+            <th>Email</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for centre in centre_campings %}
+            <tr>
+                <td>{{ centre.id }}</td>
+                <td>{{ centre.nom }}</td>
+                <td>{{ centre.description }}</td>
+                <td>{{ centre.adresse }}</td>
+                <td>{{ centre.email }}</td>
+
+                <td>
+                    <a href="{{ path('app_centre_camping_edit', {'id': centre.id}) }}">Modifier</a>
+                    <a href="{{ path('app_centre_camping_delete', {'id': centre.id}) }}">Supprimer</a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        {{ knp_pagination_render(centre_campings) }}
+
+
+    <a href="{{ path('app_centre_camping_new') }}">Ajouter</a>
+    <a style="padding-left: 20px" href="{{ path('centre_camping_stats') }}">Stats</a>
+
+
+{% endblock %}

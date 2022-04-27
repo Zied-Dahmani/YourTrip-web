@@ -1,0 +1,13 @@
+{% extends 'back_base.html.twig' %}
+
+{% block title %}Ajouter Une Tente{% endblock %}
+
+{% block body %}
+
+    <a href="{{ path('app_tente_index') }}">Retour</a>
+
+    <h1>Ajouter Une Tente</h1>
+
+    {{ include('tente/_form.html.twig') }}
+
+{% endblock %}

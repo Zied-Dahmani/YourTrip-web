@@ -1,0 +1,48 @@
+{% extends 'front_base.html.twig' %}
+
+{% block title %}Tentes{% endblock %}
+
+{% block body %}
+
+{#<section id="about" class="about-sec section-wrapper description txt-color" >#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+
+    <h1 style="color: darkorange">Tentes</h1>
+
+    <table class="table" style="border: white">
+        <thead>
+            <tr>
+                <th style="color: white">Nom</th>
+                <th style="color: white">Description</th>
+                <th style="color: white">Prix</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for tente in tentes %}
+            <tr>
+                <td style="color: white">{{ tente.nom }}</td>
+                <td style="color: white">{{ tente.description }}</td>
+                <td style="color: white">{{ tente.prix }}</td>
+
+                <td>
+                    <a style="color: darkorange" href="{{ path('sendEmail', {'id': tente.centreCamping.id,'to':tente.centreCamping.email}) }}">Réserver</a>
+                </td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+
+
+{% endblock %}

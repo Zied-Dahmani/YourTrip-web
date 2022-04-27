@@ -1,0 +1,26 @@
+{% extends 'front_base.html.twig ' %}
+
+{% block title %}Envoyer un E-mail{% endblock %}
+{% block auth %}
+    <h4>Envoyer un E-mail</h4>
+    <div class="form-area">
+        {{ form_start(formail) }}
+
+        {#        <div class="form-group">#}
+        {#            {{ form_label(formail.email) }}#}
+        {#            {{ form_widget(formail.email) }}#}
+        {#        </div>#}
+
+        <div style="color: white" class="form-group">
+            {{ form_label(formail.message) }}
+            {{ form_widget(formail.message) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_row(formail.Submit) }}
+        </div>
+        {{ form_end(formail) }}
+
+    </div>
+
+{% endblock %}

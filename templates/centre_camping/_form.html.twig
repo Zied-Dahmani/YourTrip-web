@@ -1,0 +1,30 @@
+
+{{ form_start(form,{attr:{novalidate:'novalidate'}}) }}
+
+    {{ form_label(form.nom) }}
+    <div class="col-sm-10">
+    {{ form_widget(form.nom) }}
+    <div style="color:red">{{ form_errors(form.nom) }} </div>
+
+
+    <div class="col-sm-10"style="margin-top:20px">
+    {{ form_label(form.description) }}
+    </div>
+    {{ form_widget(form.description) }}
+    <div style="color:red">{{ form_errors(form.description) }} </div>
+
+    <div class="col-sm-10"style="margin-top:20px">
+    {{ form_label(form.adresse) }}
+    </div>
+    {{ form_widget(form.adresse) }}
+    <div style="color:red">{{ form_errors(form.adresse) }} </div>
+
+        <div class="col-sm-10"style="margin-top:20px">
+            {{ form_label(form.email) }}
+        </div>
+        {{ form_widget(form.email) }}
+        <div style="color:red">{{ form_errors(form.email) }} </div>
+
+
+    <button class="btn" style="margin-top:20px">{{ button_label|default('Ajouter') }}</button>
+{{ form_end(form) }}

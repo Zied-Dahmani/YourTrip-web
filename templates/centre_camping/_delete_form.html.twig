@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('app_centre_camping_delete', {'id': centre_camping.id}) }}"
+      onsubmit="return confirm('Confirmez-vous la suppression de ce centre de camping');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ centre_camping.id) }}">
+    <button class="btn">Supprimer</button>
+</form>
