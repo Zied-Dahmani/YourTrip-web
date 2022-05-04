@@ -392,6 +392,7 @@
 
                 <div class="portfolio-items">
 
+                    {% for c in centre_campings %}
                     <!-- Portfolio Items -->
                     <div class="item portfolio-item centre">
 
@@ -400,7 +401,7 @@
                             <div class="portfolio-details" >
                                 <div class="portfolio-meta-btn" >
                                     <ul class="work-meta" >  </a> >
-                                        <li class="lighbox"><a href="{{ asset('images/CentreCamping/centre1.jpg') }}" class="featured-work-img"> <a href="{{ path('app_centre_camping_show2',{'id': 4}) }}">  <i class="fa fa-search-plus"></i></a></a></li>
+                                        <li class="lighbox"><a href="{{ asset('images/CentreCamping/centre1.jpg') }}" class="featured-work-img"> <a href="{{ path('app_centre_camping_show2',{'id': c.id}) }}">  <i class="fa fa-search-plus"></i></a></a></li>
 
                                     </ul>
                                 </div>
@@ -409,23 +410,24 @@
 
                     </div>
                     <!-- Portfolio Items End -->
+                    {% endfor %}
 
-                    <!-- Portfolio Items -->
-                    <div class="item portfolio-item centre">
+{#                    <!-- Portfolio Items -->#}
+{#                    <div class="item portfolio-item centre">#}
 
-                        <img src="{{ asset('images/CentreCamping/centre2.jpg') }}" alt="">
-                        <div class="portfolio-details-wrapper">
-                            <div class="portfolio-details">
-                                <div class="portfolio-meta-btn">
-                                    <ul class="work-meta">
-                                        <li class="lighbox"><a href="{{ asset('images/CentreCamping/centre2.jpg') }}" class="featured-work-img"> <a href="{{ path('app_centre_camping_show2',{'id': 2}) }}">  <i class="fa fa-search-plus"></i></a></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+{#                        <img src="{{ asset('images/CentreCamping/centre2.jpg') }}" alt="">#}
+{#                        <div class="portfolio-details-wrapper">#}
+{#                            <div class="portfolio-details">#}
+{#                                <div class="portfolio-meta-btn">#}
+{#                                    <ul class="work-meta">#}
+{#                                        <li class="lighbox"><a href="{{ asset('images/CentreCamping/centre2.jpg') }}" class="featured-work-img"> <a href="{{ path('app_centre_camping_show2',{'id': 2}) }}">  <i class="fa fa-search-plus"></i></a></a></li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
 
-                    </div>
-                    <!-- Portfolio Items End -->
+{#                    </div>#}
+{#                    <!-- Portfolio Items End -->#}
 
                     <!-- Portfolio Items -->
                     <div class="item portfolio-item web">

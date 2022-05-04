@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=CentreCampingRepository::class)
  */
@@ -16,6 +17,7 @@ class CentreCamping
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("api:centre")
      */
     private $id;
 
@@ -27,18 +29,21 @@ class CentreCamping
      *     htmlPattern = "[a-zA-Z]+",
      *     message="Le nom doit être alphabétique"
      * )
+     * @Groups("api:centre")
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=255)
      * * @Assert\NotBlank(message="Tapez la description!")
+     * @Groups("api:centre")
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=255)
      * * @Assert\NotBlank(message="Tapez l' adresse!")
+     * @Groups("api:centre")
      */
     private $adresse;
 
@@ -51,6 +56,7 @@ class CentreCamping
      * @ORM\Column(type="string", length=255)
      * * @Assert\NotBlank(message="Tapez l'email!")
      * * @Assert\Email(message="Tapez un email valide!")
+     * @Groups("api:centre")
      */
     private $email;
 
@@ -61,7 +67,12 @@ class CentreCamping
         $this->tentes = new ArrayCollection();
     }
 
+    public function setId(string $id): self
+    {
+        $this->id = $id;
 
+        return $this;
+    }
     public function getId(): ?int
     {
         return $this->id;

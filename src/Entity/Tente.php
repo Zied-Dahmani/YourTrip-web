@@ -5,7 +5,7 @@ namespace App\Entity;
 use App\Repository\TenteRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=TenteRepository::class)
  */
@@ -15,6 +15,7 @@ class Tente
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("api:tente")
      */
     private $id;
 
@@ -26,12 +27,14 @@ class Tente
      *     htmlPattern = "[a-zA-Z]+",
      *     message="Le nom doit être alphabétique"
      * )
+     * @Groups("api:tente")
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=255)
      * * @Assert\NotBlank(message="Tapez la description!")
+     * @Groups("api:tente")
      */
     private $description;
 
@@ -43,6 +46,7 @@ class Tente
      *      max = 260,
      *      notInRangeMessage = "Le prix doit être compris entre {{ min }} DT et {{ max }} DT!",
      * )
+     * @Groups("api:tente")
      */
     private $prix;
 
