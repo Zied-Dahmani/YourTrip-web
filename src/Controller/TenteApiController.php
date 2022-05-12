@@ -43,10 +43,6 @@ class TenteApiController extends AbstractController
         $tente->setDescription($request->request->get('description'));
         $tente->setCentreCamping($this->getDoctrine()->getRepository(CentreCamping::class)->find(intval($request->request->get('centre_camping_id'))));
 
-//        $file=new File($request->request->get('image'));
-//        $fileName = md5(uniqid()) . '.jpg';
-//        $tente->setImage($fileName);
-//        $file->move($this->getParameter('tente_image_directory'), $fileName);
 
         $em=$this->getDoctrine()->getManager();
         $em->persist($tente);

@@ -54,7 +54,6 @@ class CentreCampingApiController extends AbstractController
 
         $em = $this->getDoctrine()->getManager();
         $centre = new CentreCamping();
-        //$centre->setUser($this->getDoctrine()->getRepository(User::class)->findOneBy(["username"=>$request->request->get('username')]));
         $centre->setNom($request->request->get('nom'));
         $centre->setAdresse($request->request->get('adresse'));
         $centre->setEmail($request->request->get('email'));
@@ -94,12 +93,7 @@ class CentreCampingApiController extends AbstractController
 
     public function delete(Request $request, NormalizerInterface $normalizer): Response
     {
-//
-//        if (!$request->query->get('username'))
-//            return new Response(
-//                '{"error": "Missing username."}',
-//                400, ['Accept' => 'application/json',
-//                'Content-Type' => 'application/json']);
+
         $centre = $this->getDoctrine()->getRepository(CentreCamping::class)->find(intval($request->request->get('id')));
 
 
